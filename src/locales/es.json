@@ -1,0 +1,278 @@
+{
+  "hero": {
+    "badge": "IoT clínico para rehabilitación precisa",
+    "title": "Rehabilitación con precisión en cada movimiento.",
+    "description": "uFlex ayuda a fisioterapeutas a monitorear ejercicios con sensores inerciales, análisis cinemático y métricas accionables para acelerar la recuperación del paciente.",
+    "primaryCta": "Comenzar Ahora",
+    "primaryCtaAria": "Comenzar ahora con uFlex",
+    "secondaryCta": "Ver Tecnología",
+    "secondaryCtaAria": "Conocer la tecnología de uFlex",
+    "figureAria": "Dispositivo uFlex en uso",
+    "imageAlt": "Paciente usando el dispositivo uFlex durante una sesión de rehabilitación",
+    "chips": {
+      "sensor": "Sensores BNO055",
+      "sync": "Sincronización BLE",
+      "analytics": "Analítica biomecánica"
+    },
+    "stats": {
+      "tracking": {
+        "title": "Seguimiento",
+        "description": "Captura del movimiento articular"
+      },
+      "feedback": {
+        "title": "Feedback",
+        "value": "Tiempo real",
+        "description": "Decisiones terapéuticas inmediatas"
+      }
+    },
+    "card": {
+      "title": "Datos biomecánicos listos para interpretar.",
+      "description": "Una interfaz clínica apoyada por sensores inerciales, sincronización inalámbrica y visualización terapéutica para convertir movimiento en criterio útil."
+    }
+  },
+  "features": {
+    "eyebrow": "Beneficios",
+    "title": "Diseñado para clínicas que necesitan precisión, claridad y escalabilidad.",
+    "cards": {
+      "monitoring": {
+        "title": "Monitoreo en tiempo real",
+        "description": "Observa rango de movimiento y orientación corporal mientras el paciente ejecuta cada ejercicio."
+      },
+      "sync": {
+        "title": "Sincronización continua",
+        "description": "Integra sensores, aplicación y dashboard para mantener datos clínicos consistentes y disponibles."
+      },
+      "results": {
+        "title": "Resultados medibles",
+        "description": "Convierte avances del paciente en indicadores claros para seguimiento terapéutico y reporte."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Cómo Funciona",
+    "title": "Una experiencia simple para el terapeuta, sofisticada por dentro.",
+    "description": "Desde la colocación del dispositivo hasta el análisis de la rehabilitación, uFlex acompaña todo el flujo clínico con una interfaz clara y accionable.",
+    "stepsAria": "Etapas de uso de uFlex",
+    "steps": {
+      "placement": {
+        "title": "Colocación",
+        "description": "Se ajusta el wearable sobre la articulación objetivo para iniciar una captura estable."
+      },
+      "sync": {
+        "title": "Sincronización",
+        "description": "La app enlaza el sensor, calibra el movimiento y prepara la lectura clínica."
+      },
+      "rehab": {
+        "title": "Rehabilitación",
+        "description": "El profesional visualiza el progreso y corrige en tiempo real cada ejercicio."
+      }
+    }
+  },
+  "tech": {
+    "eyebrow": "Arquitectura Técnica",
+    "title": "IoT y Edge Computing para rehabilitación inteligente.",
+    "description": "uFlex combina sensores, conectividad IoT y procesamiento local para capturar movimiento y convertirlo en métricas clínicas accionables.",
+    "images": {
+      "raspberry": {
+        "label": "Raspberry Pi 4",
+        "alt": "Raspberry Pi 4 como parte del sistema uFlex"
+      },
+      "battery": {
+        "label": "Batería LiPo 3.7V",
+        "alt": "Batería LiPo de 3.7V para el sistema uFlex"
+      },
+      "esp32": {
+        "label": "ESP32 S3",
+        "alt": "Microcontrolador ESP32 S3 en la arquitectura de uFlex"
+      },
+      "bno": {
+        "label": "BNO055",
+        "alt": "Sensor inercial BNO055 usado en uFlex"
+      }
+    },
+    "cards": {
+      "iot": {
+        "title": "Internet de las cosas",
+        "description": "Sensores y dispositivos conectados para medir y transmitir datos del ejercicio."
+      },
+      "edge": {
+        "title": "Edge Computing",
+        "description": "Procesamiento local para responder más rápido y reducir dependencia de la nube."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "Fisioterapeutas que buscan medir mejor, no solo observar mejor.",
+    "ratingAria": "Calificación de 5 estrellas",
+    "cards": {
+      "andrea": {
+        "role": "Fisioterapeuta musculoesquelética",
+        "quote": "“uFlex nos permitió explicar el progreso al paciente con datos simples y visuales.”",
+        "imageAlt": "Dra. Andrea Paredes"
+      },
+      "diego": {
+        "role": "Especialista en rehabilitación deportiva",
+        "quote": "“La lectura en tiempo real reduce correcciones tardías y mejora la adherencia al ejercicio.”",
+        "imageAlt": "Lic. Diego Salvatierra"
+      },
+      "valeria": {
+        "role": "Líder de innovación clínica",
+        "quote": "“Lo valioso no es el sensor por sí solo, sino cómo traduce movimiento en criterio clínico.”",
+        "imageAlt": "Mg. Valeria Castañeda"
+      }
+    }
+  },
+  "pricing": {
+    "eyebrow": "Planes",
+    "title": "Opciones flexibles para pilotos, clínicas y despliegues institucionales.",
+    "perMonth": "/mes",
+    "cards": {
+      "starter": {
+        "badge": "Starter",
+        "title": "Piloto Clínico",
+        "description": "Ideal para validar el flujo terapéutico con un equipo pequeño.",
+        "features": {
+          "device": "1 dispositivo uFlex",
+          "dashboard": "Dashboard básico",
+          "support": "Soporte por correo"
+        },
+        "cta": "Elegir Starter"
+      },
+      "professional": {
+        "badge": "Más elegido",
+        "title": "Profesional",
+        "description": "Pensado para clínicas que requieren monitoreo continuo y reportes más robustos.",
+        "features": {
+          "device": "3 dispositivos uFlex",
+          "reports": "Reportes de progreso",
+          "training": "Capacitación inicial"
+        },
+        "cta": "Solicitar Profesional"
+      },
+      "enterprise": {
+        "badge": "Enterprise",
+        "title": "Institucional",
+        "price": "Personalizado",
+        "description": "Para redes de salud, universidades o programas de investigación aplicada.",
+        "features": {
+          "devices": "Dispositivos escalables",
+          "integrations": "Integraciones dedicadas",
+          "support": "Soporte prioritario"
+        },
+        "cta": "Hablar con ventas"
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Preguntas Frecuentes",
+    "title": "Respuestas rápidas para equipos clínicos y aliados tecnológicos.",
+    "items": {
+      "evaluation": {
+        "question": "¿uFlex reemplaza la evaluación del fisioterapeuta?",
+        "answer": "No. uFlex complementa el criterio clínico con mediciones objetivas para facilitar seguimiento y toma de decisiones."
+      },
+      "exercises": {
+        "question": "¿Qué tipo de ejercicios puede monitorear?",
+        "answer": "Está orientado a ejercicios de movilidad y control articular donde la orientación y el rango de movimiento sean variables relevantes."
+      },
+      "internet": {
+        "question": "¿Se requiere conexión permanente a internet?",
+        "answer": "La captura puede operar localmente según el flujo implementado; la sincronización de reportes puede realizarse posteriormente."
+      },
+      "sensors": {
+        "question": "¿Cómo se integran los sensores BNO055?",
+        "answer": "Los sensores se montan en el wearable y entregan orientación fusionada que luego se transforma en métricas cinemáticas útiles para la app."
+      },
+      "battery": {
+        "question": "¿La batería viene incluida con el dispositivo?",
+        "answer": "Sí. uFlex contempla batería integrada dentro del kit para asegurar autonomía y portabilidad durante las sesiones de rehabilitación."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Conversemos sobre una demo adaptada a tu entorno terapéutico.",
+    "description": "Cuéntanos si buscas validar un piloto, presentar la solución a tu clínica o explorar investigación aplicada con KinIoT.",
+    "form": {
+      "aria": "Formulario de contacto para solicitar demo",
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre",
+        "aria": "Nombre"
+      },
+      "institution": {
+        "label": "Institución",
+        "placeholder": "Clínica o universidad",
+        "aria": "Institución"
+      },
+      "email": {
+        "label": "Correo",
+        "placeholder": "correo@ejemplo.com",
+        "aria": "Correo electrónico"
+      },
+      "phone": {
+        "label": "Teléfono",
+        "placeholder": "+51 999 999 999",
+        "aria": "Teléfono"
+      },
+      "message": {
+        "label": "¿Qué necesitas?",
+        "placeholder": "Cuéntanos sobre tu caso de uso",
+        "aria": "Mensaje"
+      },
+      "submit": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "description": "Tecnología wearable de KinIoT para una rehabilitación más medible, conectada y humana.",
+    "productAria": "Enlaces del producto",
+    "productTitle": "Producto",
+    "productLinks": {
+      "technology": "Tecnología",
+      "pricing": "Planes",
+      "faq": "FAQ"
+    },
+    "legalAria": "Enlaces legales",
+    "legalTitle": "Legal",
+    "legalLinks": {
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "cookies": "Cookies"
+    },
+    "socialTitle": "Redes",
+    "social": {
+      "instagram": "Instagram de uFlex",
+      "x": "X de uFlex",
+      "tiktok": "TikTok de uFlex"
+    },
+    "copyright": "© 2026 KinIoT · uFlex. Todos los derechos reservados."
+  },
+  "navbar": {
+    "brandAria": "Ir al inicio de uFlex",
+    "home": "Inicio",
+    "benefits": "Beneficios",
+    "technology": "Tecnología",
+    "testimonials": "Testimonios",
+    "plans": "Planes",
+    "faq": "Preguntas",
+    "contact": "Contacto",
+    "cta": "Comenzar Ahora",
+    "ctaAria": "Comenzar ahora con uFlex",
+    "menuAria": "Abrir menú de navegación",
+    "languageAria": "Seleccionar idioma",
+    "languages": {
+      "en": "Inglés",
+      "es": "Español"
+    }
+  },
+  "routes": {
+    "home": "#inicio",
+    "features": "#beneficios",
+    "technology": "#tecnologia",
+    "testimonials": "#testimonios",
+    "pricing": "#planes",
+    "faq": "#faq",
+    "contact": "#contacto"
+  }
+}
