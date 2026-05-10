@@ -1,13 +1,809 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" data-theme="uflex">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>uflex-landing-page</title>
+    <meta name="theme-color" content="#074D61">
+    <meta
+      name="description"
+      content="uFlex de KinIoT transforma la rehabilitación física con sensores IoT y análisis cinemático en tiempo real."
+    />
+    <title>uFlex | Rehabilitación Inteligente con IoT</title>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <body class="bg-base-200 text-base-content">
+    <header
+      class="sticky top-0 z-50 border-b border-base-300/70 bg-base-100/80 backdrop-blur-xl"
+      role="banner"
+    >
+      <nav class="navbar mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegación principal">
+        <div class="navbar-start">
+          <a
+            href="#home"
+            class="inline-flex items-center gap-3 text-2xl font-black tracking-tight text-primary no-underline"
+            aria-label="Ir al inicio de uFlex"
+            data-i18n-href="routes.home"
+            data-i18n-aria-label="navbar.brandAria"
+          >
+            <img src="/images/uflex-brand-mark-original-tiny.png" alt="" class="h-9 w-9 object-contain" />
+            <span>uFlex</span>
+          </a>
+        </div>
+
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal gap-2 rounded-full bg-base-100/70 px-3 py-2 text-sm font-medium shadow-sm">
+            <li><a href="#home" data-i18n="navbar.home" data-i18n-href="routes.home">Inicio</a></li>
+            <li><a href="#features" data-i18n="navbar.benefits" data-i18n-href="routes.features">Beneficios</a></li>
+            <li><a href="#technology" data-i18n="navbar.technology" data-i18n-href="routes.technology">Tecnología</a></li>
+            <li><a href="#testimonials" data-i18n="navbar.testimonials" data-i18n-href="routes.testimonials">Testimonios</a></li>
+            <li><a href="#pricing" data-i18n="navbar.plans" data-i18n-href="routes.pricing">Planes</a></li>
+            <li><a href="#faq" data-i18n="navbar.faq" data-i18n-href="routes.faq">FAQ</a></li>
+            <li><a href="#contact" data-i18n="navbar.contact" data-i18n-href="routes.contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end gap-2">
+          <details class="dropdown dropdown-end" data-language-dropdown>
+            <summary
+              id="language-toggle"
+              class="btn btn-ghost h-10 min-h-10 rounded-full border border-base-300 bg-base-100/85 px-4 text-primary shadow-sm transition hover:border-secondary/50 hover:bg-base-200"
+              aria-label="Seleccionar idioma"
+              data-i18n-aria-label="navbar.languageAria"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 010 18M12 3a15.3 15.3 0 000 18" />
+              </svg>
+              <span id="language-current">EN</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <ul class="menu dropdown-content z-[2] mt-3 w-44 rounded-3xl border border-base-300 bg-base-100 p-2 shadow-xl">
+              <li>
+                <button
+                  type="button"
+                  class="justify-between rounded-2xl"
+                  data-language-option="en"
+                >
+                  <span data-i18n="navbar.languages.en">English</span>
+                  <span data-language-check="en" aria-hidden="true">●</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="justify-between rounded-2xl"
+                  data-language-option="es"
+                >
+                  <span data-i18n="navbar.languages.es">Español</span>
+                  <span data-language-check="es" aria-hidden="true">●</span>
+                </button>
+              </li>
+            </ul>
+          </details>
+          <a
+            href="#contact"
+            class="btn btn-primary hidden sm:inline-flex"
+            aria-label="Comenzar ahora con uFlex"
+            data-i18n="navbar.cta"
+            data-i18n-href="routes.contact"
+            data-i18n-aria-label="navbar.ctaAria"
+          >
+            Comenzar Ahora
+          </a>
+          <div class="dropdown dropdown-end lg:hidden" data-mobile-menu>
+            <button
+              tabindex="0"
+              class="btn btn-ghost btn-circle"
+              aria-label="Abrir menú de navegación"
+              data-i18n-aria-label="navbar.menuAria"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content z-[1] mt-3 w-64 rounded-3xl border border-base-300 bg-base-100 p-3 shadow-xl"
+            >
+              <li><a href="#home" data-i18n="navbar.home" data-i18n-href="routes.home">Inicio</a></li>
+              <li><a href="#features" data-i18n="navbar.benefits" data-i18n-href="routes.features">Beneficios</a></li>
+              <li><a href="#technology" data-i18n="navbar.technology" data-i18n-href="routes.technology">Tecnología</a></li>
+              <li><a href="#testimonials" data-i18n="navbar.testimonials" data-i18n-href="routes.testimonials">Testimonios</a></li>
+              <li><a href="#pricing" data-i18n="navbar.plans" data-i18n-href="routes.pricing">Planes</a></li>
+              <li><a href="#faq" data-i18n="navbar.faq" data-i18n-href="routes.faq">FAQ</a></li>
+              <li><a href="#contact" data-i18n="navbar.contact" data-i18n-href="routes.contact">Contacto</a></li>
+              <li class="mt-2">
+                <a
+                  href="#contact"
+                  class="btn btn-primary"
+                  data-i18n="navbar.cta"
+                  data-i18n-href="routes.contact"
+                  data-i18n-aria-label="navbar.ctaAria"
+                >
+                  Comenzar Ahora
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <span id="inicio" class="relative -top-24 block invisible"></span>
+    <main id="home" role="main">
+      <section class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8 lg:py-12">
+        <div class="space-y-5 lg:pr-6">
+          <div class="badge badge-outline rounded-full border-secondary/60 px-4 py-3 text-primary" data-i18n="hero.badge">
+            IoT clínico para rehabilitación precisa
+          </div>
+          <div class="space-y-3">
+            <h1 class="max-w-lg text-4xl leading-[0.95] md:text-5xl xl:text-6xl" data-i18n="hero.title">
+              Rehabilitación con precisión en cada movimiento.
+            </h1>
+            <p class="max-w-xl text-base leading-7 text-base-content/75" data-i18n="hero.description">
+              uFlex ayuda a fisioterapeutas a monitorear ejercicios con sensores inerciales, análisis cinemático y métricas accionables para acelerar la recuperación del paciente.
+            </p>
+          </div>
+          <div class="flex w-full flex-row items-center justify-center gap-3 lg:justify-start">
+            <a
+              href="#contact"
+              class="btn btn-primary flex-1 rounded-2xl px-4 sm:flex-none sm:px-8"
+              aria-label="Comenzar ahora con uFlex"
+              data-i18n="hero.primaryCta"
+              data-i18n-href="routes.contact"
+              data-i18n-aria-label="hero.primaryCtaAria"
+            >
+              Comenzar Ahora
+            </a>
+            <a
+              href="#technology"
+              class="btn btn-outline flex-1 rounded-2xl px-4 sm:flex-none sm:px-8"
+              aria-label="Conocer la tecnología de uFlex"
+              data-i18n="hero.secondaryCta"
+              data-i18n-href="routes.technology"
+              data-i18n-aria-label="hero.secondaryCtaAria"
+            >
+              Ver Tecnología
+            </a>
+          </div>
+          <div class="hidden gap-1 rounded-3xl border border-base-300 bg-base-100 shadow-sm lg:stats-horizontal lg:stats lg:flex">
+            <div class="stat">
+              <div class="stat-title" data-i18n="hero.stats.tracking.title">Seguimiento</div>
+              <div class="stat-value text-3xl text-primary md:text-4xl">360°</div>
+              <div class="stat-desc" data-i18n="hero.stats.tracking.description">Captura del movimiento articular</div>
+            </div>
+            <div class="stat">
+              <div class="stat-title" data-i18n="hero.stats.feedback.title">Feedback</div>
+              <div class="stat-value text-2xl text-secondary md:text-3xl" data-i18n="hero.stats.feedback.value">Tiempo real</div>
+              <div class="stat-desc" data-i18n="hero.stats.feedback.description">Decisiones terapéuticas inmediatas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute left-8 top-8 -z-10 h-40 w-40 rounded-full bg-secondary/25 blur-3xl"></div>
+          <div class="absolute bottom-10 right-6 -z-10 h-44 w-44 rounded-full bg-accent/20 blur-3xl"></div>
+          <div class="relative overflow-hidden rounded-[2rem] border border-base-300 bg-base-100 p-3 shadow-[0_28px_70px_-34px_rgba(7,77,97,0.38)]">
+            <figure
+              class="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] lg:min-h-[420px] lg:aspect-auto"
+              aria-label="Dispositivo uFlex en uso"
+              data-i18n-aria-label="hero.figureAria"
+            >
+              <img
+                src="/src/assets/hero.jpg"
+                alt="Paciente usando el dispositivo uFlex durante una sesión de rehabilitación"
+                data-i18n-alt="hero.imageAlt"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-tr from-primary/75 via-primary/20 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#072f3a]/82 via-[#072f3a]/18 to-transparent"></div>
+
+              <div class="absolute bottom-5 left-5 right-5 hidden lg:block">
+                <div class="flex flex-wrap justify-center gap-3">
+                  <div class="rounded-full border border-white/20 bg-white/14 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
+                    <span data-i18n="hero.chips.sensor">Sensores BNO055</span>
+                  </div>
+                  <div class="rounded-full border border-white/20 bg-white/14 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
+                    <span data-i18n="hero.chips.sync">Sincronización BLE</span>
+                  </div>
+                  <div class="rounded-full border border-white/20 bg-white/14 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
+                    <span data-i18n="hero.chips.analytics">Analítica biomecánica</span>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <div class="mt-4 rounded-[1.75rem] border border-base-300 bg-base-100/90 p-5 shadow-sm backdrop-blur-sm">
+            <h2 class="text-2xl font-extrabold text-primary" data-i18n="hero.card.title">Datos biomecánicos listos para interpretar.</h2>
+            <p class="mt-2 max-w-xl text-sm leading-6 text-base-content/72 sm:text-base" data-i18n="hero.card.description">
+              Una interfaz clínica apoyada por sensores inerciales, sincronización inalámbrica y visualización terapéutica para convertir movimiento en criterio útil.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <span id="beneficios" class="relative -top-24 block invisible"></span>
+      <section id="features" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="features-title">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-i18n="features.eyebrow">Beneficios</p>
+          <h2 id="features-title" class="mt-3" data-i18n="features.title">Diseñado para clínicas que necesitan precisión, claridad y escalabilidad.</h2>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="card card-bordered rounded-3xl bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 data-i18n="features.cards.monitoring.title">Monitoreo en tiempo real</h3>
+              <p class="text-base-content/72" data-i18n="features.cards.monitoring.description">
+                Observa rango de movimiento y orientación corporal mientras el paciente ejecuta cada ejercicio.
+              </p>
+            </div>
+          </article>
+          <article class="card card-bordered rounded-3xl bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-primary" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 17v-6a3 3 0 013-3h7m0 0l-3-3m3 3l-3 3M5 7h4a3 3 0 013 3v7" />
+                </svg>
+              </div>
+              <h3 data-i18n="features.cards.sync.title">Sincronización continua</h3>
+              <p class="text-base-content/72" data-i18n="features.cards.sync.description">
+                Integra sensores, aplicación y dashboard para mantener datos clínicos consistentes y disponibles.
+              </p>
+            </div>
+          </article>
+          <article class="card card-bordered rounded-3xl bg-base-100 shadow-sm">
+            <div class="card-body">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-primary" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 15l4-4 4 4 8-8" />
+                </svg>
+              </div>
+              <h3 data-i18n="features.cards.results.title">Resultados medibles</h3>
+              <p class="text-base-content/72" data-i18n="features.cards.results.description">
+                Convierte avances del paciente en indicadores claros para seguimiento terapéutico y reporte.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="how-title">
+        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div class="space-y-4">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-i18n="how.eyebrow">Cómo Funciona</p>
+            <h2 id="how-title" data-i18n="how.title">Una experiencia simple para el terapeuta, sofisticada por dentro.</h2>
+            <p class="text-lg text-base-content/72" data-i18n="how.description">
+              Desde la colocación del dispositivo hasta el análisis de la rehabilitación, uFlex acompaña todo el flujo clínico con una interfaz clara y accionable.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-base-300 bg-base-100 p-6 shadow-sm">
+            <div class="grid gap-4 lg:grid-cols-3" aria-label="Etapas de uso de uFlex" data-i18n-aria-label="how.stepsAria">
+              <article class="min-w-0 rounded-[1.75rem] border border-base-300 bg-base-200 p-5">
+                <div class="flex items-start gap-4 lg:flex-col lg:items-start">
+                  <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-content text-xl font-black shadow-sm">
+                    1
+                  </div>
+                  <div class="min-w-0 w-full space-y-2">
+                    <h3 class="text-[clamp(1.3rem,1vw,1.7rem)] leading-[1.1] [text-wrap:auto]" data-i18n="how.steps.placement.title">Colocación</h3>
+                    <p class="max-w-none text-sm leading-6 text-base-content/72" data-i18n="how.steps.placement.description">
+                      Se ajusta el wearable sobre la articulación objetivo para iniciar una captura estable.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="min-w-0 rounded-[1.75rem] border border-base-300 bg-base-200 p-5">
+                <div class="flex items-start gap-4 lg:flex-col lg:items-start">
+                  <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-secondary text-secondary-content text-xl font-black shadow-sm">
+                    2
+                  </div>
+                  <div class="min-w-0 w-full space-y-2">
+                    <h3 class="text-[clamp(1.3rem,1vw,1.7rem)] leading-[1.1] [text-wrap:auto]" data-i18n="how.steps.sync.title">Sincronización</h3>
+                    <p class="max-w-none text-sm leading-6 text-base-content/72" data-i18n="how.steps.sync.description">
+                      La app enlaza el sensor, calibra el movimiento y prepara la lectura clínica.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="min-w-0 rounded-[1.75rem] border border-base-300 bg-base-200 p-5">
+                <div class="flex items-start gap-4 lg:flex-col lg:items-start">
+                  <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-content text-xl font-black shadow-sm">
+                    3
+                  </div>
+                  <div class="min-w-0 w-full space-y-2">
+                    <h3 class="text-[clamp(1.3rem,1vw,1.7rem)] leading-[1.1] [text-wrap:auto]" data-i18n="how.steps.rehab.title">Rehabilitación</h3>
+                    <p class="max-w-none text-sm leading-6 text-base-content/72" data-i18n="how.steps.rehab.description">
+                      El profesional visualiza el progreso y corrige en tiempo real cada ejercicio.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <span id="tecnologia" class="relative -top-24 block invisible"></span>
+      <section id="technology" class="bg-base-100 py-16" aria-labelledby="tech-title">
+        <div class="mx-auto grid max-w-7xl gap-4 px-4 sm:gap-10 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+          <div class="order-2 rounded-3xl border border-base-300 bg-base-200 p-4 shadow-sm lg:order-1 lg:px-5 lg:pt-5 lg:pb-6">
+            <div class="block lg:grid lg:h-[560px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-3">
+              <div class="hidden lg:flex lg:flex-col lg:gap-4">
+                <figure class="group relative min-h-[210px] overflow-hidden rounded-[1.75rem] lg:flex-[0.9]">
+                  <img
+                    src="/src/assets/raspberry.jpg"
+                    alt="Raspberry Pi 4 como parte del sistema uFlex"
+                    data-i18n-alt="tech.images.raspberry.alt"
+                    class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent"></div>
+                  <figcaption class="absolute bottom-4 left-4">
+                    <span class="rounded-full border border-white/20 bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md" data-i18n="tech.images.raspberry.label">
+                      Raspberry Pi 4
+                    </span>
+                  </figcaption>
+                </figure>
+
+                <figure class="group relative min-h-[240px] overflow-hidden rounded-[1.75rem] lg:flex-[1.02]">
+                  <img
+                    src="/src/assets/battery.jpg"
+                    alt="Batería LiPo de 3.7V para el sistema uFlex"
+                    data-i18n-alt="tech.images.battery.alt"
+                    class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent"></div>
+                  <figcaption class="absolute bottom-4 left-4">
+                    <span class="rounded-full border border-white/20 bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md" data-i18n="tech.images.battery.label">
+                      Batería LiPo 3.7V
+                    </span>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="flex flex-col gap-3">
+                <figure class="group relative overflow-hidden rounded-[1.75rem] lg:hidden">
+                  <img
+                    src="/src/assets/raspberry.jpg"
+                    alt="Raspberry Pi 4 como parte del sistema uFlex"
+                    data-i18n-alt="tech.images.raspberry.alt"
+                    class="block w-full h-auto transition duration-500 group-hover:scale-[1.01]"
+                  />
+                  <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary/55 via-transparent to-transparent"></div>
+                  <figcaption class="absolute bottom-4 left-4">
+                    <span class="rounded-full border border-white/20 bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md" data-i18n="tech.images.raspberry.label">
+                      Raspberry Pi 4
+                    </span>
+                  </figcaption>
+                </figure>
+
+                <figure class="hidden group relative min-h-[200px] overflow-hidden rounded-[1.75rem] lg:flex-[0.98] lg:block">
+                  <img
+                    src="/src/assets/esp32.jpg"
+                    alt="Microcontrolador ESP32 S3 en la arquitectura de uFlex"
+                    data-i18n-alt="tech.images.esp32.alt"
+                    class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent"></div>
+                  <figcaption class="absolute bottom-4 left-4">
+                    <span class="rounded-full border border-white/20 bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md" data-i18n="tech.images.esp32.label">
+                      ESP32 S3
+                    </span>
+                  </figcaption>
+                </figure>
+
+                <figure class="hidden group relative min-h-[160px] overflow-hidden rounded-[1.75rem] lg:flex-[0.78] lg:block">
+                  <img
+                    src="/src/assets/bno.jpg"
+                    alt="Sensor inercial BNO055 usado en uFlex"
+                    data-i18n-alt="tech.images.bno.alt"
+                    class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent"></div>
+                  <figcaption class="absolute bottom-4 left-4">
+                    <span class="rounded-full border border-white/20 bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-md" data-i18n="tech.images.bno.label">
+                      BNO055
+                    </span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 space-y-5 lg:order-2">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-i18n="tech.eyebrow">Arquitectura Técnica</p>
+            <h2 id="tech-title" data-i18n="tech.title">IoT y Edge Computing para rehabilitación inteligente.</h2>
+            <p class="text-base-content/72" data-i18n="tech.description">
+              uFlex combina sensores, conectividad IoT y procesamiento local para capturar movimiento y convertirlo en métricas clínicas accionables.
+            </p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-3xl border border-base-300 bg-base-200 p-5">
+                <h3 class="text-xl" data-i18n="tech.cards.iot.title">Internet de las cosas</h3>
+                <p class="mt-2 text-base-content/72" data-i18n="tech.cards.iot.description">Sensores y dispositivos conectados para medir y transmitir datos del ejercicio.</p>
+              </div>
+              <div class="rounded-3xl border border-base-300 bg-base-200 p-5">
+                <h3 class="text-xl" data-i18n="tech.cards.edge.title">Edge Computing</h3>
+                <p class="mt-2 text-base-content/72" data-i18n="tech.cards.edge.description">Procesamiento local para responder más rápido y reducir dependencia de la nube.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <span id="testimonios" class="relative -top-24 block invisible"></span>
+      <section id="testimonials" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="testimonials-title">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-i18n="testimonials.eyebrow">Testimonios</p>
+          <h2 id="testimonials-title" class="mt-3" data-i18n="testimonials.title">Fisioterapeutas que buscan medir mejor, no solo observar mejor.</h2>
+        </div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          <article class="card h-full rounded-3xl border border-base-300 bg-base-100 shadow-sm">
+            <div class="card-body h-full gap-6">
+              <div class="flex items-center gap-4">
+                <div class="avatar">
+                  <div class="h-16 w-16 rounded-2xl">
+                    <img src="/src/assets/testimonial-1.jpg" alt="Dra. Andrea Paredes" data-i18n-alt="testimonials.cards.andrea.imageAlt" />
+                  </div>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-2 flex gap-1 text-secondary" aria-label="Calificación de 5 estrellas" data-i18n-aria-label="testimonials.ratingAria">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                  <h3 class="text-xl">Dra. Andrea Paredes</h3>
+                  <p class="text-base-content/65" data-i18n="testimonials.cards.andrea.role">Fisioterapeuta musculoesquelética</p>
+                </div>
+              </div>
+              <div class="flex-1 rounded-[2rem] bg-base-200 px-6 py-5 text-base leading-7 text-base-content" data-i18n="testimonials.cards.andrea.quote">
+                “uFlex nos permitió explicar el progreso al paciente con datos simples y visuales.”
+              </div>
+            </div>
+          </article>
+          <article class="card h-full rounded-3xl border border-base-300 bg-base-100 shadow-sm">
+            <div class="card-body h-full gap-6">
+              <div class="flex items-center gap-4">
+                <div class="avatar">
+                  <div class="h-16 w-16 rounded-2xl">
+                    <img src="/src/assets/testimonial-2.jpg" alt="Lic. Diego Salvatierra" data-i18n-alt="testimonials.cards.diego.imageAlt" />
+                  </div>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-2 flex gap-1 text-secondary" aria-label="Calificación de 5 estrellas" data-i18n-aria-label="testimonials.ratingAria">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                  <h3 class="text-xl">Lic. Diego Salvatierra</h3>
+                  <p class="text-base-content/65" data-i18n="testimonials.cards.diego.role">Especialista en rehabilitación deportiva</p>
+                </div>
+              </div>
+              <div class="flex-1 rounded-[2rem] bg-base-200 px-6 py-5 text-base leading-7 text-base-content" data-i18n="testimonials.cards.diego.quote">
+                “La lectura en tiempo real reduce correcciones tardías y mejora la adherencia al ejercicio.”
+              </div>
+            </div>
+          </article>
+          <article class="card h-full rounded-3xl border border-base-300 bg-base-100 shadow-sm">
+            <div class="card-body h-full gap-6">
+              <div class="flex items-center gap-4">
+                <div class="avatar">
+                  <div class="h-16 w-16 rounded-2xl">
+                    <img src="/src/assets/testimonial-3.jpg" alt="Mg. Valeria Castañeda" data-i18n-alt="testimonials.cards.valeria.imageAlt" />
+                  </div>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="mb-2 flex gap-1 text-secondary" aria-label="Calificación de 5 estrellas" data-i18n-aria-label="testimonials.ratingAria">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  </div>
+                  <h3 class="text-xl">Mg. Valeria Castañeda</h3>
+                  <p class="text-base-content/65" data-i18n="testimonials.cards.valeria.role">Líder de innovación clínica</p>
+                </div>
+              </div>
+              <div class="flex-1 rounded-[2rem] bg-base-200 px-6 py-5 text-base leading-7 text-base-content" data-i18n="testimonials.cards.valeria.quote">
+                “Lo valioso no es el sensor por sí solo, sino cómo traduce movimiento en criterio clínico.”
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <span id="planes" class="relative -top-24 block invisible"></span>
+      <section id="pricing" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="pricing-title">
+        <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-i18n="pricing.eyebrow">Planes</p>
+          <h2 id="pricing-title" class="mt-3 max-w-3xl text-center" data-i18n="pricing.title">Opciones flexibles para pilotos, clínicas y despliegues institucionales.</h2>
+        </div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-3 lg:items-stretch">
+          <article class="card rounded-3xl border border-base-300 bg-base-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge badge-outline w-fit rounded-full" data-i18n="pricing.cards.starter.badge">Starter</span>
+              <h3 class="text-2xl" data-i18n="pricing.cards.starter.title">Piloto Clínico</h3>
+              <p class="text-4xl font-black text-primary">S/ 399<span class="text-base font-medium text-base-content/60" data-i18n="pricing.perMonth">/mes</span></p>
+              <p class="text-base-content/72" data-i18n="pricing.cards.starter.description">Ideal para validar el flujo terapéutico con un equipo pequeño.</p>
+              <ul class="space-y-3 text-sm text-base-content/75">
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.starter.features.device">1 dispositivo uFlex</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.starter.features.dashboard">Dashboard básico</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.starter.features.support">Soporte por correo</span>
+                </li>
+              </ul>
+              <div class="card-actions mt-auto">
+                <a href="#contacto" class="btn btn-outline w-full" data-i18n="pricing.cards.starter.cta" data-i18n-href="routes.contact">Elegir Starter</a>
+              </div>
+            </div>
+          </article>
+          <article class="card scale-100 rounded-3xl border-2 border-secondary bg-secondary/10 shadow-lg lg:scale-105">
+            <div class="card-body">
+              <span class="badge badge-secondary w-fit rounded-full" data-i18n="pricing.cards.professional.badge">Más elegido</span>
+              <h3 class="text-2xl" data-i18n="pricing.cards.professional.title">Professional</h3>
+              <p class="text-4xl font-black text-primary">S/ 899<span class="text-base font-medium text-base-content/60" data-i18n="pricing.perMonth">/mes</span></p>
+              <p class="text-base-content/72" data-i18n="pricing.cards.professional.description">Pensado para clínicas que requieren monitoreo continuo y reportes más robustos.</p>
+              <ul class="space-y-3 text-sm text-base-content/75">
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.professional.features.device">3 dispositivos uFlex</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.professional.features.reports">Reportes de progreso</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.professional.features.training">Capacitación inicial</span>
+                </li>
+              </ul>
+              <div class="card-actions mt-auto">
+                <a href="#contacto" class="btn btn-primary w-full" data-i18n="pricing.cards.professional.cta" data-i18n-href="routes.contact">Solicitar Professional</a>
+              </div>
+            </div>
+          </article>
+          <article class="card rounded-3xl border border-base-300 bg-base-100 shadow-sm">
+            <div class="card-body">
+              <span class="badge badge-outline w-fit rounded-full" data-i18n="pricing.cards.enterprise.badge">Enterprise</span>
+              <h3 class="text-2xl" data-i18n="pricing.cards.enterprise.title">Institucional</h3>
+              <p class="text-4xl font-black text-primary" data-i18n="pricing.cards.enterprise.price">Custom</p>
+              <p class="text-base-content/72" data-i18n="pricing.cards.enterprise.description">Para redes de salud, universidades o programas de investigación aplicada.</p>
+              <ul class="space-y-3 text-sm text-base-content/75">
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.enterprise.features.devices">Dispositivos escalables</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.enterprise.features.integrations">Integraciones dedicadas</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span data-i18n="pricing.cards.enterprise.features.support">Soporte prioritario</span>
+                </li>
+              </ul>
+              <div class="card-actions mt-auto">
+                <a href="#contacto" class="btn btn-outline w-full" data-i18n="pricing.cards.enterprise.cta" data-i18n-href="routes.contact">Hablar con ventas</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="faq-title">
+        <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-i18n="faq.eyebrow">Preguntas Frecuentes</p>
+          <h2 id="faq-title" class="mt-3 max-w-3xl text-center" data-i18n="faq.title">Respuestas rápidas para equipos clínicos y aliados tecnológicos.</h2>
+        </div>
+        <div class="mt-12 space-y-4">
+          <div class="collapse collapse-arrow rounded-3xl border border-base-300 bg-base-100">
+            <input type="radio" name="faq-accordion" checked="checked" />
+            <div class="collapse-title text-lg font-semibold" data-i18n="faq.items.evaluation.question">¿uFlex reemplaza la evaluación del fisioterapeuta?</div>
+            <div class="collapse-content text-base-content/72" data-i18n="faq.items.evaluation.answer">
+              No. uFlex complementa el criterio clínico con mediciones objetivas para facilitar seguimiento y toma de decisiones.
+            </div>
+          </div>
+          <div class="collapse collapse-arrow rounded-3xl border border-base-300 bg-base-100">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold" data-i18n="faq.items.exercises.question">¿Qué tipo de ejercicios puede monitorear?</div>
+            <div class="collapse-content text-base-content/72" data-i18n="faq.items.exercises.answer">
+              Está orientado a ejercicios de movilidad y control articular donde la orientación y el rango de movimiento sean variables relevantes.
+            </div>
+          </div>
+          <div class="collapse collapse-arrow rounded-3xl border border-base-300 bg-base-100">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold" data-i18n="faq.items.internet.question">¿Se requiere conexión permanente a internet?</div>
+            <div class="collapse-content text-base-content/72" data-i18n="faq.items.internet.answer">
+              La captura puede operar localmente según el flujo implementado; la sincronización de reportes puede realizarse posteriormente.
+            </div>
+          </div>
+          <div class="collapse collapse-arrow rounded-3xl border border-base-300 bg-base-100">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold" data-i18n="faq.items.sensors.question">¿Cómo se integran los sensores BNO055?</div>
+            <div class="collapse-content text-base-content/72" data-i18n="faq.items.sensors.answer">
+              Los sensores se montan en el wearable y entregan orientación fusionada que luego se transforma en métricas cinemáticas útiles para la app.
+            </div>
+          </div>
+          <div class="collapse collapse-arrow rounded-3xl border border-base-300 bg-base-100">
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title text-lg font-semibold" data-i18n="faq.items.battery.question">¿La batería viene incluida con el dispositivo?</div>
+            <div class="collapse-content text-base-content/72" data-i18n="faq.items.battery.answer">
+              Sí. uFlex contempla batería integrada dentro del kit para asegurar autonomía y portabilidad durante las sesiones de rehabilitación.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <span id="contacto" class="relative -top-24 block invisible"></span>
+      <section id="contact" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="contact-title">
+        <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="space-y-5">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-secondary" data-i18n="contact.eyebrow">Contacto</p>
+            <h2 id="contact-title" data-i18n="contact.title">Conversemos sobre una demo adaptada a tu entorno terapéutico.</h2>
+            <p class="text-lg text-base-content/72" data-i18n="contact.description">
+              Cuéntanos si buscas validar un piloto, presentar la solución a tu clínica o explorar investigación aplicada con KinIoT.
+            </p>
+          </div>
+          <form
+            class="rounded-3xl border border-base-300 bg-base-100 p-6 shadow-sm"
+            aria-label="Formulario de contacto para solicitar demo"
+            data-i18n-aria-label="contact.form.aria"
+          >
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="form-control w-full">
+                <div class="label">
+                  <span class="label-text" data-i18n="contact.form.name.label">Nombre</span>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Tu nombre"
+                  class="input input-bordered w-full rounded-2xl"
+                  aria-label="Nombre"
+                  data-i18n-placeholder="contact.form.name.placeholder"
+                  data-i18n-aria-label="contact.form.name.aria"
+                />
+              </label>
+              <label class="form-control w-full">
+                <div class="label">
+                  <span class="label-text" data-i18n="contact.form.institution.label">Institución</span>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Clínica o universidad"
+                  class="input input-bordered w-full rounded-2xl"
+                  aria-label="Institución"
+                  data-i18n-placeholder="contact.form.institution.placeholder"
+                  data-i18n-aria-label="contact.form.institution.aria"
+                />
+              </label>
+              <label class="form-control w-full">
+                <div class="label">
+                  <span class="label-text" data-i18n="contact.form.email.label">Correo</span>
+                </div>
+                <input
+                  type="email"
+                  placeholder="correo@ejemplo.com"
+                  class="input input-bordered w-full rounded-2xl"
+                  aria-label="Correo electrónico"
+                  data-i18n-placeholder="contact.form.email.placeholder"
+                  data-i18n-aria-label="contact.form.email.aria"
+                />
+              </label>
+              <label class="form-control w-full">
+                <div class="label">
+                  <span class="label-text" data-i18n="contact.form.phone.label">Teléfono</span>
+                </div>
+                <input
+                  type="tel"
+                  placeholder="+51 999 999 999"
+                  class="input input-bordered w-full rounded-2xl"
+                  aria-label="Teléfono"
+                  data-i18n-placeholder="contact.form.phone.placeholder"
+                  data-i18n-aria-label="contact.form.phone.aria"
+                />
+              </label>
+            </div>
+            <div class="mt-6 w-full">
+              <label class="form-control w-full">
+                <div class="label pb-0">
+                  <span class="label-text" data-i18n="contact.form.message.label">¿Qué necesitas?</span>
+                </div>
+                <textarea
+                  class="textarea textarea-bordered min-h-32 w-full rounded-2xl"
+                  placeholder="Cuéntanos sobre tu caso de uso"
+                  aria-label="Mensaje"
+                  data-i18n-placeholder="contact.form.message.placeholder"
+                  data-i18n-aria-label="contact.form.message.aria"
+                ></textarea>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-6 w-full rounded-2xl" data-i18n="contact.form.submit">Enviar Mensaje</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-base-300 bg-base-100" role="contentinfo">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div class="space-y-3">
+          <a href="#home" class="inline-flex items-center gap-3 text-2xl font-black tracking-tight text-primary no-underline" data-i18n-href="routes.home">
+            <img src="/images/uflex-brand-mark-original-tiny.png" alt="" class="h-9 w-9 object-contain" />
+            <span>uFlex</span>
+          </a>
+          <p class="text-base-content/72" data-i18n="footer.description">
+            Tecnología wearable de KinIoT para una rehabilitación más medible, conectada y humana.
+          </p>
+        </div>
+        <nav class="space-y-3" aria-label="Enlaces del producto" data-i18n-aria-label="footer.productAria">
+          <h3 class="text-lg" data-i18n="footer.productTitle">Producto</h3>
+          <ul class="space-y-2 text-base-content/72">
+            <li><a href="#technology" data-i18n="footer.productLinks.technology" data-i18n-href="routes.technology">Tecnología</a></li>
+            <li><a href="#pricing" data-i18n="footer.productLinks.pricing" data-i18n-href="routes.pricing">Planes</a></li>
+            <li><a href="#faq" data-i18n="footer.productLinks.faq" data-i18n-href="routes.faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <nav class="space-y-3" aria-label="Enlaces legales" data-i18n-aria-label="footer.legalAria">
+          <h3 class="text-lg" data-i18n="footer.legalTitle">Legal</h3>
+          <ul class="space-y-2 text-base-content/72">
+            <li><a href="#contact" data-i18n="footer.legalLinks.privacy" data-i18n-href="routes.contact">Privacidad</a></li>
+            <li><a href="#contact" data-i18n="footer.legalLinks.terms" data-i18n-href="routes.contact">Términos</a></li>
+            <li><a href="#contact" data-i18n="footer.legalLinks.cookies" data-i18n-href="routes.contact">Cookies</a></li>
+          </ul>
+        </nav>
+        <div class="space-y-3">
+          <h3 class="text-lg" data-i18n="footer.socialTitle">Redes</h3>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com" class="btn btn-circle btn-outline p-0" aria-label="Instagram de uFlex" data-i18n-aria-label="footer.social.instagram">
+              <img src="/src/assets/instagram.png" alt="" class="h-5 w-5 object-contain" />
+            </a>
+            <a href="https://www.x.com" class="btn btn-circle btn-outline p-0" aria-label="X de uFlex" data-i18n-aria-label="footer.social.x">
+              <img src="/src/assets/twitter.png" alt="" class="h-5 w-5 object-contain" />
+            </a>
+            <a href="https://www.tiktok.com" class="btn btn-circle btn-outline p-0" aria-label="TikTok de uFlex" data-i18n-aria-label="footer.social.tiktok">
+              <img src="/src/assets/tik-tok.png" alt="" class="h-5 w-5 object-contain" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-base-300/80 px-4 py-5 text-center text-sm text-base-content/60" data-i18n="footer.copyright">
+        © 2026 KinIoT · uFlex. Todos los derechos reservados.
+      </div>
+    </footer>
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
