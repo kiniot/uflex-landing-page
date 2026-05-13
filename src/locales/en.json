@@ -1,0 +1,278 @@
+{
+  "hero": {
+    "badge": "Clinical IoT for precise rehabilitation",
+    "title": "Rehabilitation with precision in every movement.",
+    "description": "uFlex helps physiotherapists monitor exercises with inertial sensors, kinematic analysis, and actionable metrics to speed up patient recovery.",
+    "primaryCta": "Get Started",
+    "primaryCtaAria": "Get started now with uFlex",
+    "secondaryCta": "View Technology",
+    "secondaryCtaAria": "Learn about uFlex technology",
+    "figureAria": "uFlex device in use",
+    "imageAlt": "Patient using the uFlex device during a rehabilitation session",
+    "chips": {
+      "sensor": "BNO055 Sensors",
+      "sync": "BLE Sync",
+      "analytics": "Biomechanical Analytics"
+    },
+    "stats": {
+      "tracking": {
+        "title": "Tracking",
+        "description": "Joint movement capture"
+      },
+      "feedback": {
+        "title": "Feedback",
+        "value": "Real time",
+        "description": "Immediate therapeutic decisions"
+      }
+    },
+    "card": {
+      "title": "Biomechanical data ready to interpret.",
+      "description": "A clinical interface powered by inertial sensors, wireless synchronization, and therapeutic visualization to turn movement into useful criteria."
+    }
+  },
+  "features": {
+    "eyebrow": "Benefits",
+    "title": "Designed for clinics that need precision, clarity, and scalability.",
+    "cards": {
+      "monitoring": {
+        "title": "Real-time monitoring",
+        "description": "Observe range of motion and body orientation while the patient performs each exercise."
+      },
+      "sync": {
+        "title": "Continuous synchronization",
+        "description": "Integrate sensors, app, and dashboard to keep clinical data consistent and available."
+      },
+      "results": {
+        "title": "Measurable results",
+        "description": "Turn patient progress into clear indicators for therapeutic follow-up and reporting."
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "How It Works",
+    "title": "A simple experience for the therapist, sophisticated underneath.",
+    "description": "From placing the device to analyzing rehabilitation, uFlex supports the entire clinical flow with a clear and actionable interface.",
+    "stepsAria": "Stages of using uFlex",
+    "steps": {
+      "placement": {
+        "title": "Placement",
+        "description": "The wearable is adjusted on the target joint to start a stable capture."
+      },
+      "sync": {
+        "title": "Synchronization",
+        "description": "The app pairs the sensor, calibrates movement, and prepares the clinical reading."
+      },
+      "rehab": {
+        "title": "Rehabilitation",
+        "description": "The professional visualizes progress and corrects each exercise in real time."
+      }
+    }
+  },
+  "tech": {
+    "eyebrow": "Technical Architecture",
+    "title": "IoT and Edge Computing for intelligent rehabilitation.",
+    "description": "uFlex combines sensors, IoT connectivity, and local processing to capture movement and turn it into actionable clinical metrics.",
+    "images": {
+      "raspberry": {
+        "label": "Raspberry Pi 4",
+        "alt": "Raspberry Pi 4 as part of the uFlex system"
+      },
+      "battery": {
+        "label": "LiPo Battery 3.7V",
+        "alt": "3.7V LiPo battery for the uFlex system"
+      },
+      "esp32": {
+        "label": "ESP32 S3",
+        "alt": "ESP32 S3 microcontroller in the uFlex architecture"
+      },
+      "bno": {
+        "label": "BNO055",
+        "alt": "BNO055 inertial sensor used in uFlex"
+      }
+    },
+    "cards": {
+      "iot": {
+        "title": "Internet of Things",
+        "description": "Connected sensors and devices to measure and transmit exercise data."
+      },
+      "edge": {
+        "title": "Edge Computing",
+        "description": "Local processing to respond faster and reduce dependence on the cloud."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Physiotherapists who want to measure better, not just observe better.",
+    "ratingAria": "5-star rating",
+    "cards": {
+      "andrea": {
+        "role": "Musculoskeletal physiotherapist",
+        "quote": "\"uFlex helped us explain patient progress with simple, visual data.\"",
+        "imageAlt": "Dr. Andrea Paredes"
+      },
+      "diego": {
+        "role": "Sports rehabilitation specialist",
+        "quote": "\"Real-time readings reduce late corrections and improve exercise adherence.\"",
+        "imageAlt": "Lic. Diego Salvatierra"
+      },
+      "valeria": {
+        "role": "Clinical innovation lead",
+        "quote": "\"The value is not just the sensor itself, but how it translates movement into clinical criteria.\"",
+        "imageAlt": "Mg. Valeria Castañeda"
+      }
+    }
+  },
+  "pricing": {
+    "eyebrow": "Plans",
+    "title": "Flexible options for pilots, clinics, and institutional deployments.",
+    "perMonth": "/month",
+    "cards": {
+      "starter": {
+        "badge": "Starter",
+        "title": "Clinical Pilot",
+        "description": "Ideal for validating the therapeutic workflow with a small team.",
+        "features": {
+          "device": "1 uFlex device",
+          "dashboard": "Basic dashboard",
+          "support": "Email support"
+        },
+        "cta": "Choose Starter"
+      },
+      "professional": {
+        "badge": "Most popular",
+        "title": "Professional",
+        "description": "Designed for clinics that require continuous monitoring and more robust reporting.",
+        "features": {
+          "device": "3 uFlex devices",
+          "reports": "Progress reports",
+          "training": "Initial training"
+        },
+        "cta": "Request Professional"
+      },
+      "enterprise": {
+        "badge": "Enterprise",
+        "title": "Institutional",
+        "price": "Custom",
+        "description": "For health networks, universities, or applied research programs.",
+        "features": {
+          "devices": "Scalable devices",
+          "integrations": "Dedicated integrations",
+          "support": "Priority support"
+        },
+        "cta": "Talk to sales"
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Frequently Asked Questions",
+    "title": "Quick answers for clinical teams and technology partners.",
+    "items": {
+      "evaluation": {
+        "question": "Does uFlex replace the physiotherapist's evaluation?",
+        "answer": "No. uFlex complements clinical judgment with objective measurements to support follow-up and decision-making."
+      },
+      "exercises": {
+        "question": "What types of exercises can it monitor?",
+        "answer": "It is oriented toward mobility and joint-control exercises where orientation and range of motion are relevant variables."
+      },
+      "internet": {
+        "question": "Is a permanent internet connection required?",
+        "answer": "Capture can operate locally depending on the implemented workflow; report synchronization can be performed later."
+      },
+      "sensors": {
+        "question": "How are the BNO055 sensors integrated?",
+        "answer": "The sensors are mounted on the wearable and provide fused orientation data that is then transformed into kinematic metrics useful for the app."
+      },
+      "battery": {
+        "question": "Is the battery included with the device?",
+        "answer": "Yes. uFlex includes an integrated battery in the kit to ensure autonomy and portability during rehabilitation sessions."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about a demo tailored to your therapeutic environment.",
+    "description": "Tell us if you want to validate a pilot, present the solution to your clinic, or explore applied research with KinIoT.",
+    "form": {
+      "aria": "Contact form to request a demo",
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "aria": "Name"
+      },
+      "institution": {
+        "label": "Institution",
+        "placeholder": "Clinic or university",
+        "aria": "Institution"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email@example.com",
+        "aria": "Email address"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+51 999 999 999",
+        "aria": "Phone"
+      },
+      "message": {
+        "label": "What do you need?",
+        "placeholder": "Tell us about your use case",
+        "aria": "Message"
+      },
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "description": "KinIoT wearable technology for rehabilitation that is more measurable, connected, and human.",
+    "productAria": "Product links",
+    "productTitle": "Product",
+    "productLinks": {
+      "technology": "Technology",
+      "pricing": "Plans",
+      "faq": "FAQ"
+    },
+    "legalAria": "Legal links",
+    "legalTitle": "Legal",
+    "legalLinks": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies"
+    },
+    "socialTitle": "Social",
+    "social": {
+      "instagram": "uFlex Instagram",
+      "x": "uFlex X",
+      "tiktok": "uFlex TikTok"
+    },
+    "copyright": "© 2026 KinIoT · uFlex. All rights reserved."
+  },
+  "navbar": {
+    "brandAria": "Go to the uFlex home section",
+    "home": "Home",
+    "benefits": "Benefits",
+    "technology": "Technology",
+    "testimonials": "Testimonials",
+    "plans": "Plans",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Get Started",
+    "ctaAria": "Get started now with uFlex",
+    "menuAria": "Open navigation menu",
+    "languageAria": "Select language",
+    "languages": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "routes": {
+    "home": "#home",
+    "features": "#features",
+    "technology": "#technology",
+    "testimonials": "#testimonials",
+    "pricing": "#pricing",
+    "faq": "#faq",
+    "contact": "#contact"
+  }
+}
