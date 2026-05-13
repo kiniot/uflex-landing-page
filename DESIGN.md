@@ -27,6 +27,36 @@ rounded:
 ## Overview
 uFlex is a medical-grade IoT startup focused on tele-rehabilitation. The design system balances clinical professionalism with innovative technology, ensuring high legibility for patients and data precision for specialists. It follows a "Tech-Organic" aesthetic, using warm backgrounds to reduce hospital-related stress while maintaining sharp, tech-focused interactive elements.
 
+## Landing Page Summary
+The landing page presents uFlex as a clinical IoT solution for tele-rehabilitation and is designed to move visitors from awareness to demo request. The main audience includes physiotherapists, clinic managers, and innovation teams that need a trustworthy way to measure movement, visualize progress, and support therapy decisions with objective data.
+
+### Primary Goal
+- Communicate the product value clearly in the first screen.
+- Reinforce credibility with technical, clinical, and testimonial content.
+- Drive conversions toward the contact form or demo request.
+
+### Page Structure
+1. **Hero**: Introduces the brand promise, key metrics, and the main CTA.
+2. **Benefits**: Highlights real-time monitoring, continuous synchronization, and measurable results.
+3. **How It Works**: Shows the simple clinical flow from placement to rehabilitation.
+4. **Technical Architecture**: Explains the IoT and edge-computing foundation behind the product.
+5. **Testimonials**: Adds social proof from clinical professionals.
+6. **Plans**: Summarizes pilot, professional, and institutional options.
+7. **FAQ**: Resolves common doubts about scope, connectivity, and sensors.
+8. **Contact**: Converts interest into a demo or sales conversation.
+
+### Messaging Guidance
+- Keep the tone professional, calm, and medically credible.
+- Emphasize precision, clarity, and measurable progress instead of generic marketing claims.
+- Use human-centered language that supports therapists and patients without overstating medical outcomes.
+- Prefer short, direct sentences for key conversion areas such as the hero, CTA buttons, and contact form.
+
+### Content Notes for the Landing Page
+- The hero should always communicate "rehabilitation with precision" and show the product as a clinical aid, not a replacement for professional judgment.
+- The visuals should balance warm backgrounds with clean, high-contrast UI surfaces to match the Tech-Organic aesthetic.
+- Technical sections should connect hardware, sensors, and software to tangible clinical value.
+- Testimonials and pricing should reduce hesitation and help visitors identify the option that best fits their context.
+
 ## Colors
 
 ### Brand Colors
