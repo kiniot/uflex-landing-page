@@ -51,6 +51,9 @@ async function applyLanguage(lang) {
     const translations = await loadLanguage(lang);
     updateTexts(translations);
     updateLanguageSelectorState(lang);
+    document.dispatchEvent(new CustomEvent("language:changed", {
+        detail: { lang, translations }
+    }));
 }
 
 export async function initializeLanguageSelector() {

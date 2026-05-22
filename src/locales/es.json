@@ -125,42 +125,180 @@
   },
   "pricing": {
     "eyebrow": "Planes",
-    "title": "Opciones flexibles para pilotos, clínicas y despliegues institucionales.",
-    "perMonth": "/mes",
+    "title": "Planes pensados para crecer con tu práctica clínica.",
+    "description": "Compara precios en soles o dólares y elige facturación mensual o anual.",
+    "billing": {
+      "label": "Facturación",
+      "aria": "Seleccionar frecuencia de facturación",
+      "monthly": "Mensual",
+      "annual": "Anual"
+    },
+    "currency": {
+      "label": "Moneda",
+      "aria": "Seleccionar moneda",
+      "pen": "Soles",
+      "usd": "Dólares"
+    },
+    "labels": {
+      "subscription": "Suscripción",
+      "kits": "Kits IoT"
+    },
     "cards": {
-      "starter": {
-        "badge": "Starter",
-        "title": "Piloto Clínico",
-        "description": "Ideal para validar el flujo terapéutico con un equipo pequeño.",
-        "features": {
-          "device": "1 dispositivo uFlex",
-          "dashboard": "Dashboard básico",
-          "support": "Soporte por correo"
+      "pilot": {
+        "badge": "Inicial",
+        "title": "Pilot",
+        "description": "Ideal para empezar con una operación ágil, profesional y fácil de implementar.",
+        "prices": {
+          "monthly": {
+            "pen": "S/ 290",
+            "usd": "$90"
+          },
+          "annual": {
+            "pen": "S/ 2900",
+            "usd": "$900"
+          }
         },
-        "cta": "Elegir Starter"
+        "suffixes": {
+          "monthly": {
+            "pen": "/mes",
+            "usd": "/mes"
+          },
+          "annual": {
+            "pen": "/año",
+            "usd": "/año"
+          }
+        },
+        "messages": {
+          "recurring": {
+            "pen": "Más un pago único de S/ 350 por cada kit de IoT.",
+            "usd": "Más un pago único de $99 por cada kit de IoT."
+          },
+          "kitSummary": {
+            "pen": "Más un pago único de S/ 350 por cada kit de IoT.",
+            "usd": "Más un pago único de $99 por cada kit de IoT."
+          },
+          "kitBaseDetail": {
+            "pen": "1 kit inicial de IoT con posibilidad de 1 adicional",
+            "usd": "1 kit inicial de IoT con posibilidad de 1 adicional"
+          },
+          "kitAdditionalDetail": {
+            "pen": "Puedes añadir hasta 1 kit adicional por S/ 350.",
+            "usd": "You can add up to 1 extra kit for $99."
+          }
+        },
+        "features": {
+          "physiotherapists": "2 fisioterapeutas",
+          "patients": "15 pacientes",
+          "dashboard": "Dashboard web con vista de analíticas por paciente",
+          "rom": "Seguimiento del Rango de Movimiento (ROM) por sesión",
+          "mobile": "App del paciente para su rutina diaria",
+          "support": "Soporte por correo electrónico"
+        },
+        "cta": "Comprar Pilot"
       },
       "professional": {
         "badge": "Más elegido",
         "title": "Profesional",
-        "description": "Pensado para clínicas que requieren monitoreo continuo y reportes más robustos.",
-        "features": {
-          "device": "3 dispositivos uFlex",
-          "reports": "Reportes de progreso",
-          "training": "Capacitación inicial"
+        "description": "Pensado para clínicas en crecimiento que atienden un flujo terapéutico constante.",
+        "prices": {
+          "monthly": {
+            "pen": "S/ 790",
+            "usd": "$230"
+          },
+          "annual": {
+            "pen": "S/ 7900",
+            "usd": "$2300"
+          }
         },
-        "cta": "Solicitar Profesional"
+        "suffixes": {
+          "monthly": {
+            "pen": "/mes",
+            "usd": "/mes"
+          },
+          "annual": {
+            "pen": "/año",
+            "usd": "/año"
+          }
+        },
+        "messages": {
+          "recurring": {
+            "pen": "Más un pago único de S/ 300 por cada kit de IoT.",
+            "usd": "Más un pago único de $89 por cada kit de IoT."
+          },
+          "kitSummary": {
+            "pen": "Más un pago único de S/ 300 por cada kit de IoT.",
+            "usd": "Más un pago único de $89 por cada kit de IoT."
+          },
+          "kitBaseDetail": {
+            "pen": "5 kits iniciales de IoT con posibilidad de ampliar a cualquier cantidad",
+            "usd": "5 kits iniciales de IoT con posibilidad de ampliar a cualquier cantidad"
+          },
+          "kitAdditionalDetail": {
+            "pen": "Puedes añadir más kits por S/ 300 cada uno.",
+            "usd": "You can add more kits for $89 each."
+          }
+        },
+        "features": {
+          "physiotherapists": "8 fisioterapeutas",
+          "patients": "50 pacientes",
+          "alerts": "Alertas automáticas para el paciente",
+          "reports": "Reportes PDF automatizados",
+          "onboarding": "Onboarding técnico para el staff",
+          "support": "Soporte prioritario por WhatsApp"
+        },
+        "cta": "Comprar Professional"
       },
       "enterprise": {
-        "badge": "Enterprise",
-        "title": "Institucional",
-        "price": "Personalizado",
-        "description": "Para redes de salud, universidades o programas de investigación aplicada.",
-        "features": {
-          "devices": "Dispositivos escalables",
-          "integrations": "Integraciones dedicadas",
-          "support": "Soporte prioritario"
+        "badge": "Máximo",
+        "title": "Enterprise",
+        "description": "Para operaciones de alta demanda que requieren una propuesta a medida y despliegue amplio.",
+        "prices": {
+          "monthly": {
+            "pen": "Personalizado",
+            "usd": "Custom"
+          },
+          "annual": {
+            "pen": "Personalizado",
+            "usd": "Custom"
+          }
         },
-        "cta": "Hablar con ventas"
+        "suffixes": {
+          "monthly": {
+            "pen": "",
+            "usd": ""
+          },
+          "annual": {
+            "pen": "",
+            "usd": ""
+          }
+        },
+        "messages": {
+          "recurring": {
+            "pen": "El modelo mensual o anual se define con ventas.",
+            "usd": "The monthly or annual model is defined with sales."
+          },
+          "kitSummary": {
+            "pen": "Despliegue y hardware definidos a medida.",
+            "usd": "Hardware and rollout are tailored to your operation."
+          },
+          "kitBaseDetail": {
+            "pen": "Escalamiento total de hardware",
+            "usd": "Full hardware scale-up"
+          },
+          "kitAdditionalDetail": {
+            "pen": "También podemos incluir onboarding, acompañamiento e integraciones según la propuesta.",
+            "usd": "Onboarding, guidance, and integrations can also be included in the proposal."
+          }
+        },
+        "features": {
+          "physiotherapists": "Fisioterapeutas ilimitados",
+          "patients": "Pacientes ilimitados",
+          "ehr": "Integración con Historias Clínicas Electrónicas (HCE) propia",
+          "admin": "Módulo administrador avanzado para control del staff y uso de kits",
+          "whitelabel": "White-label con marca institucional",
+          "support": "Soporte 24/7 con ejecutivo dedicado"
+        },
+        "cta": "Contactar con ventas"
       }
     }
   },
