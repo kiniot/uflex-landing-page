@@ -124,7 +124,10 @@
   }
 
   body {
+    position: relative;
+    isolation: isolate;
     min-height: 100vh;
+    overflow-x: clip;
     background:
       radial-gradient(circle at top right, rgb(72 203 182 / 0.14), transparent 28%),
       radial-gradient(circle at top left, rgb(0 180 216 / 0.08), transparent 24%),
@@ -237,5 +240,222 @@
   header,
   footer {
     position: relative;
+  }
+}
+
+/* NOTE: these interaction rules are intentionally unlayered so they win over
+   DaisyUI's own (.btn / .card) transition declarations in the cascade. */
+
+/* Surface cards lift gently on hover. Uses transform so reveal (translate) never clashes. */
+.card {
+  transition:
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 450ms ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+  border-color: rgb(72 203 182 / 0.45);
+}
+
+/* Featured pricing card is emphasized via the independent `scale` property,
+   leaving `transform` free so its hover lift is identical to the other cards. */
+@media (min-width: 1024px) {
+  .card--featured {
+    scale: 1.05;
+  }
+}
+
+/* Smooth micro-interactions for every button (CTAs, ghost, circle, language). */
+.btn {
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 320ms ease,
+    border-color 320ms ease,
+    color 320ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  box-shadow: 0 16px 30px -16px rgb(7 77 97 / 0.55);
+}
+
+.btn-circle:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Animated underline for desktop nav links */
+.menu-horizontal > li > a {
+  position: relative;
+}
+
+.menu-horizontal > li > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  height: 2px;
+  width: 0;
+  border-radius: 999px;
+  background: var(--secondary);
+  transform: translateX(-50%);
+  transition: width 220ms ease;
+}
+
+.menu-horizontal > li > a:hover::after {
+  width: 60%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Scroll reveal — uses `translate` (independent of `transform`) so it never
+     overrides hover lifts or the featured card scale. The .reveal class is only
+     applied by JS, so content stays visible if scripting is unavailable. */
+  .reveal {
+    opacity: 0;
+    translate: 0 22px;
+    transition:
+      opacity 650ms ease,
+      translate 650ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 450ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 450ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  /* Soften the FAQ accordion open/close motion */
+  .collapse {
+    transition: grid-template-rows 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* A collapse that also scroll-reveals needs both transitions, otherwise the
+     `.collapse` rule wins and the reveal (opacity/translate) snaps instantly. */
+  .collapse.reveal {
+    transition:
+      opacity 650ms ease,
+      translate 650ms cubic-bezier(0.16, 1, 0.3, 1),
+      grid-template-rows 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Ambient floating orbs in the hero */
+  .float-orb {
+    animation: uflex-float 9s ease-in-out infinite;
+  }
+
+  .float-orb--slow {
+    animation: uflex-float-alt 12s ease-in-out infinite;
+  }
+
+  /* Hero entrance: elements fade up on load (staggered via inline animation-delay) */
+  .hero-rise {
+    animation: uflex-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* The badge both rises in on load and then keeps its soft pulsing glow */
+  .hero-badge {
+    animation:
+      uflex-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both,
+      uflex-badge-glow 4.5s ease-in-out 1s infinite;
+  }
+
+  /* Ambient background lights that gently breathe and drift */
+  .glow-pulse {
+    animation: uflex-glow-pulse 11s ease-in-out infinite;
+  }
+
+  .glow-pulse--slow {
+    animation: uflex-glow-pulse-alt 15s ease-in-out infinite;
+  }
+
+  /* Tiny twinkling sparkles */
+  .sparkle {
+    animation: uflex-twinkle 4s ease-in-out infinite;
+  }
+}
+
+@keyframes uflex-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(10px, -16px, 0);
+  }
+}
+
+@keyframes uflex-float-alt {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-12px, 14px, 0);
+  }
+}
+
+@keyframes uflex-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes uflex-badge-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(72 203 182 / 0);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgb(72 203 182 / 0.12);
+  }
+}
+
+@keyframes uflex-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.72;
+    transform: translate3d(14px, -16px, 0) scale(1.1);
+  }
+}
+
+@keyframes uflex-glow-pulse-alt {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+  50% {
+    opacity: 0.72;
+    transform: translate3d(-16px, 12px, 0) scale(1);
+  }
+}
+
+@keyframes uflex-twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1);
   }
 }
