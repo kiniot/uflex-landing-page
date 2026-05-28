@@ -4,25 +4,21 @@ import { updateTexts } from "./updateTexts.js";
 const STORAGE_KEY = "lang";
 const DEFAULT_LANGUAGE = "en";
 
+function blurFocusedWithin(container, event) {
+    if (!(container instanceof HTMLElement) || container.contains(event.target)) {
+        return;
+    }
+
+    container.querySelectorAll("[tabindex='0']").forEach((element) => {
+        if (element instanceof HTMLElement && element.matches(":focus")) {
+            element.blur();
+        }
+    });
+}
+
 function closeOpenDropdowns(event) {
-    const languageDropdown = document.querySelector("[data-language-dropdown]");
-    const mobileMenu = document.querySelector("[data-mobile-menu]");
-
-    if (
-        languageDropdown instanceof HTMLDetailsElement &&
-        languageDropdown.open &&
-        !languageDropdown.contains(event.target)
-    ) {
-        languageDropdown.open = false;
-    }
-
-    if (mobileMenu instanceof HTMLElement && !mobileMenu.contains(event.target)) {
-        mobileMenu.querySelectorAll("[tabindex='0']").forEach((element) => {
-            if (element instanceof HTMLElement && element.matches(":focus")) {
-                element.blur();
-            }
-        });
-    }
+    blurFocusedWithin(document.querySelector("[data-language-dropdown]"), event);
+    blurFocusedWithin(document.querySelector("[data-mobile-menu]"), event);
 }
 
 function updateLanguageSelectorState(lang) {
@@ -81,7 +77,10 @@ export async function initializeLanguageSelector() {
 
             localStorage.setItem(STORAGE_KEY, nextLang);
             await applyLanguage(nextLang);
-            option.closest("details")?.removeAttribute("open");
+
+            if (document.activeElement instanceof HTMLElement) {
+                document.activeElement.blur();
+            }
         });
     });
 

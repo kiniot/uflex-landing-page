@@ -330,8 +330,8 @@
   },
   "contact": {
     "eyebrow": "Contacto",
-    "title": "Conversemos sobre una demo adaptada a tu entorno terapéutico.",
-    "description": "Cuéntanos si buscas validar un piloto, presentar la solución a tu clínica o explorar investigación aplicada con KinIoT.",
+    "title": "Conversemos y encontremos juntos el plan perfecto para tu operación.",
+    "description": "Coordina con nuestro equipo de ventas la contratación de uFlex Enterprise y una propuesta a tu medida. ¿Buscas una demo o tienes otra consulta? También estamos para ayudarte.",
     "form": {
       "aria": "Formulario de contacto para solicitar demo",
       "name": {
@@ -341,7 +341,7 @@
       },
       "institution": {
         "label": "Institución",
-        "placeholder": "Clínica o universidad",
+        "placeholder": "Clínica o centro de terapia",
         "aria": "Institución"
       },
       "email": {
