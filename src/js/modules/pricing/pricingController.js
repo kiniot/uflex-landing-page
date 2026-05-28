@@ -1,5 +1,16 @@
 const DEFAULT_PERIOD = "monthly";
 const DEFAULT_CURRENCY = "pen";
+const APP_BASE_URL = "https://uflex-clinic-web.vercel.app/";
+const CTA_CONFIG = {
+    pilot: {
+        tier: "pilot",
+        kits: "1",
+    },
+    professional: {
+        tier: "professional",
+        kits: "5",
+    },
+};
 
 const state = {
     period: DEFAULT_PERIOD,
@@ -46,6 +57,41 @@ function updateTextTarget(target, value) {
     }
 }
 
+function getBillingParam() {
+    return state.period === "annual" ? "yearly" : "monthly";
+}
+
+function buildSignupUrl(planKey) {
+    const config = CTA_CONFIG[planKey];
+
+    if (!config) {
+        return "#contact";
+    }
+
+    const url = new URL("/sign-up", APP_BASE_URL);
+
+    url.searchParams.set("billing", getBillingParam());
+    url.searchParams.set("currency", state.currency);
+    url.searchParams.set("tier", config.tier);
+    url.searchParams.set("kits", config.kits);
+    url.searchParams.set("step", "account");
+
+    return url.toString();
+}
+
+function updateCallToActionLinks() {
+    document.querySelectorAll("[data-pricing-cta]").forEach((node) => {
+        const planKey = node.dataset.pricingCta;
+
+        if (planKey === "enterprise") {
+            node.setAttribute("href", "#contact");
+            return;
+        }
+
+        node.setAttribute("href", buildSignupUrl(planKey));
+    });
+}
+
 function renderPlan(planKey) {
     const pricingConfig = state.translations?.pricing?.cards?.[planKey];
 
@@ -72,6 +118,7 @@ function renderPricing() {
     renderPlan("pilot");
     renderPlan("professional");
     renderPlan("enterprise");
+    updateCallToActionLinks();
 }
 
 function attachToggleListeners() {
