@@ -101,6 +101,12 @@
       }
     }
   },
+  "aboutProduct": {
+    "eyebrow": "About the product",
+    "title": "See how uFlex turns movement into clinical insight.",
+    "description": "Watch a short overview of the product to understand how sensors, software, and clinical interpretation come together in one experience.",
+    "videoTitle": "About the uFlex product video"
+  },
   "testimonials": {
     "eyebrow": "Testimonials",
     "title": "Physiotherapists who want to measure better, not just observe better.",

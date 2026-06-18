@@ -101,6 +101,12 @@
       }
     }
   },
+  "aboutProduct": {
+    "eyebrow": "Sobre el producto",
+    "title": "Descubre cómo uFlex transforma movimiento en criterio clínico.",
+    "description": "Mira un resumen breve del producto para entender cómo se integran sensores, software e interpretación clínica en una sola experiencia.",
+    "videoTitle": "Video sobre el producto uFlex"
+  },
   "testimonials": {
     "eyebrow": "Testimonios",
     "title": "Fisioterapeutas que buscan medir mejor, no solo observar mejor.",
