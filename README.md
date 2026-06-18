@@ -1,4 +1,4 @@
-# uFlex Landing Page
+<h1 align="center">uFlex Landing Page</h1>
 
 <div align="center">
   <img src="https://img.shields.io/badge/Vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
