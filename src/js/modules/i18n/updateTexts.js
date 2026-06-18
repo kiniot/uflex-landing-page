@@ -26,6 +26,7 @@ function updateNodeAttribute(data, attributeName, datasetKey) {
                 i18nAriaLabel: "aria-label",
                 i18nAlt: "alt",
                 i18nPlaceholder: "placeholder",
+                i18nTitle: "title",
             };
 
             node.setAttribute(attributeMap[attributeName], value);
@@ -39,4 +40,5 @@ export function updateTexts(data) {
     updateNodeAttribute(data, "i18nAriaLabel", "data-i18n-aria-label");
     updateNodeAttribute(data, "i18nAlt", "data-i18n-alt");
     updateNodeAttribute(data, "i18nPlaceholder", "data-i18n-placeholder");
+    updateNodeAttribute(data, "i18nTitle", "data-i18n-title");
 }
