@@ -129,6 +129,12 @@
       }
     }
   },
+  "aboutTeam": {
+    "eyebrow": "Sobre el equipo",
+    "title": "Conoce al equipo que acerca la precisión clínica a cada sesión.",
+    "description": "Detrás de uFlex hay un equipo multidisciplinario que conecta rehabilitación, ingeniería y diseño de producto para crear tecnología al servicio de mejores decisiones clínicas.",
+    "videoTitle": "Video sobre el equipo de uFlex"
+  },
   "pricing": {
     "eyebrow": "Planes",
     "title": "Planes pensados para crecer con tu práctica clínica.",
