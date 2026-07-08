@@ -129,6 +129,12 @@
       }
     }
   },
+  "aboutTeam": {
+    "eyebrow": "About the team",
+    "title": "Meet the team bringing clinical precision closer to every session.",
+    "description": "Behind uFlex is a multidisciplinary team connecting rehabilitation, engineering, and product design to build technology that supports better clinical decisions.",
+    "videoTitle": "About the uFlex team video"
+  },
   "pricing": {
     "eyebrow": "Plans",
     "title": "Plans designed to grow with your clinical practice.",
