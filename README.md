@@ -15,6 +15,22 @@
 
 Marketing landing page for uFlex, a tele-rehabilitation and clinical IoT product by KinIoT. This project is built as a static frontend with Vite, Tailwind CSS v4, and DaisyUI, and includes bilingual content in English and Spanish.
 
+## Live Site
+
+Visit **[uflex-landing-page.vercel.app](https://uflex-landing-page.vercel.app/)** to explore the product in English or Spanish, then continue into the **[interactive Clinic Web demo](https://uflex-clinic-web.vercel.app/sign-in?demo=1)**.
+
+![uFlex landing page hero](docs/screenshots/hero.png)
+
+### Product Story
+
+![How uFlex works](docs/screenshots/how-it-works.png)
+
+The page introduces the connected care loop from wearable sensing to guided therapy and clinical follow-up.
+
+![Technology behind uFlex](docs/screenshots/technology.png)
+
+The technology section presents the sensing kit, edge processing, and software experiences as one rehabilitation platform.
+
 ## Overview
 
 The site is designed to present uFlex as a precise rehabilitation solution for physiotherapists, clinics, and innovation teams. It combines product messaging, technical context, testimonials, pricing, FAQ content, and a contact form in a single-page experience.
